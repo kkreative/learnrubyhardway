@@ -1,12 +1,14 @@
+# Setting a variable to the first argument passed into the cmd line to run this script
 filename = ARGV.first
 
 puts "We're going to erase #{filename}"
 puts "If you don't want that, hit CTRL-C (^C)."
 puts "If you do want that, hit RETURN."
-
+# CTRL+C just exits the code, any other key would've moved this on to the next step
 $stdin.gets
 
 puts "Opening the file..."
+# Researched that the 'w' parameter will 'write' the file if it doesn't exist
 target = open(filename, 'w')
 
 puts "Truncating the file.  Goodbye!"
